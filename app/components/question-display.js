@@ -8,7 +8,6 @@ export default Ember.Component.extend({
       }
     },
     updateQuestion(question, params){
-      console.log("ohai " + params);
       this.sendAction('updateQuestion', question, params);
     }
   }

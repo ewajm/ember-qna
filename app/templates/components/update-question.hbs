@@ -1,4 +1,4 @@
-<button {{action 'toggleModal' class='btn btn-warning'}}>Edit Question</button>
+<button class='btn btn-warning' {{action 'toggleModal'}}>Edit Question</button>
 
 {{#if isShowingModal}}
   {{#modal-dialog close='toggleModal'
@@ -18,7 +18,7 @@
         <label for="info">Additional Notes:</label>
         {{input value=info id="info" class="form-control" placeholder=question.info}}
       </div>
-      <button {{action 'updateQuestion' question}}>Ask your question</button>
+      <button class="btn btn-success" {{action 'updateQuestion' question}}>Ask your question</button>
     </form>
     {{/modal-dialog}}
 {{/if}}
