@@ -14,6 +14,7 @@
     </div>
   </div>
   <div class="col-sm-3">
-    {{update-answer answer=answer}}
+    {{update-answer answer=answer updateAnswer='updateAnswer'}}
+    <button class="btn btn-danger" {{action 'destroyAnswer' answer}}>Delete Answer</button>
   </div>
 </div>
