@@ -1,1 +1,14 @@
-{{yield}}
+<div>
+  <h3>{{question.content}}</h3>
+  <div class="row">
+    <div class="col-sm-4">
+      {{moment-from-now question.timestamp}}
+    </div>
+    <div class="col-sm-4">
+      {{question.author}}
+    </div>
+    <div class="col-sm-4">
+      {{question.answers.length}} answers
+    </div>
+  </div>
+</div>
