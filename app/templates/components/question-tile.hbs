@@ -1,16 +1,16 @@
 {{#link-to 'question' question.id}}
-  <div>
-    <h3>{{question.content}}</h3>
-    <div class="row">
-      <div class="col-sm-4">
-        {{moment-from-now question.timestamp}}
-      </div>
-      <div class="col-sm-4">
-        {{question.author}}
-      </div>
-      <div class="col-sm-4">
-        {{question.answers.length}} answers
-      </div>
+  <div class="row">
+    <div  class="col-sm-6">
+    <p>{{question.content}}</p>
+    </div>
+    <div class="col-sm-3">
+      {{moment-from-now question.timestamp}}
+    </div>
+    <div class="col-sm-1">
+      {{question.author}}
+    </div>
+    <div class="col-sm-2">
+      {{question.answers.length}} answers
     </div>
   </div>
 {{/link-to}}

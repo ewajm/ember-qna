@@ -1,6 +1,10 @@
-{{question-display question=model destroyQuestion='destroyQuestion' updateQuestion='updateQuestion'}}
+{{question-display question=model destroyQuestion='destroyQuestion' updateQuestion='updateQuestion'saveQuestion='saveQuestion' saveAnswer='saveAnswer'}}
 
-{{new-answer question=model saveAnswer='saveAnswer'}}
-{{#each model.answers as |answer|}}
-  {{answer-tile answer=answer updateAnswer='updateAnswer' destroyAnswer='destroyAnswer'}}
-{{/each}}
+<h2>How people have answered: </h2>
+{{#if model.answers}}
+  {{#each model.answers as |answer|}}
+    {{answer-tile answer=answer updateAnswer='updateAnswer' destroyAnswer='destroyAnswer'}}
+  {{/each}}
+{{else}}
+  <h3>No answers yet! Why not add one using the button above?</h3>
+{{/if}}
