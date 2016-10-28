@@ -7,7 +7,7 @@ export default Ember.Component.extend({
       var params={
         author: this.get('author'),
         content: this.get('content'),
-        info: this.get('info'),
+        info: this.get('info') ? this.get('info'): "",
         timestamp: moment().valueOf()
       };
       this.sendAction('saveQuestion', params);

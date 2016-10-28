@@ -7,8 +7,9 @@ export default Ember.Component.extend({
         this.sendAction('destroyQuestion', question);
       }
     },
-    updateQuestion(question){
-      this.sendAction('updateQuestion', question);
+    updateQuestion(question, params){
+      console.log("ohai " + params);
+      this.sendAction('updateQuestion', question, params);
     }
   }
 });
