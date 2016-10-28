@@ -15,6 +15,10 @@ body {
   background-color: $winedregs;
 }
 
+h3 {
+  text-align: center;
+}
+
 .container{
   h1 {
     text-align: center;
@@ -135,4 +139,12 @@ body {
   .col-sm-3 .btn-danger{
     margin-top: 1rem;
   }
+}
+
+.make-clickable {
+  cursor: pointer;
+}
+
+.downvoted{
+  opacity: .5;
 }

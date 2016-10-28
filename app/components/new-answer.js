@@ -9,6 +9,8 @@ export default Ember.Component.extend({
         author: this.get('author'),
         content: this.get('content'),
         timestamp: moment().valueOf(),
+        upvotes: 0,
+        downvotes: 0,
         question: question
       };
       this.set('isShowingModal', false);

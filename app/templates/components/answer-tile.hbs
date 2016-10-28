@@ -1,4 +1,4 @@
-<div class="row answer-row">
+<div class="row answer-row {{if isDownvoted "downvoted"}}">
   <div class="col-sm-9">
     <p>{{answer.content}}</p>
     <div class="row">
@@ -8,8 +8,11 @@
       <div class="col-sm-4">
         {{moment-from-now answer.timestamp}}
       </div>
-      <div class="col-sm-4">
-
+      <div class="col-sm-2">
+        <span class='make-clickable' {{action 'upVote' answer}}>{{answer.upvotes}} {{fa-icon 'thumbs-up' }}</span>
+      </div>
+      <div class="col-sm-2">
+        <span class='make-clickable' {{action 'downVote' answer}}>{{answer.downvotes}} {{fa-icon 'thumbs-down' }}</span>
       </div>
     </div>
   </div>
