@@ -53,7 +53,7 @@ h2{
   .col-sm-6 {
     font-size: large;
   }
-  .col-sm-2 {
+  .col-sm-2, .col-sm-3, .col-sm-1 {
     text-align: right;
     font-size: medium;
   }
@@ -140,7 +140,7 @@ h2{
     margin-left: auto;
     display: block;
   }
-  .col-sm-2 .btn-danger{
+  .col-sm-3 .btn-danger{
     margin-top: 1rem;
   }
 }
@@ -151,4 +151,14 @@ h2{
 
 .downvoted{
   opacity: .5;
+}
+
+@media screen and (max-width: 750px){
+  .question-buttons .btn-success{
+    display: block;
+    margin: 1rem auto;
+  }
+  .answer-row .col-sm-9{
+    margin-bottom: 1rem;
+  }
 }

@@ -7,7 +7,6 @@ export default Ember.Component.extend({
     var answer = this.get('answer');
     if(answer.get('upvotes')<answer.get('downvotes')){
       this.set('isDownvoted', true);
-      console.log(this.get('isDownvoted'));
     }
   },
   actions: {
