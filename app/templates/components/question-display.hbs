@@ -1,0 +1,11 @@
+<h1>{{question.content}}</h1>
+<p>{{question.author}} {{moment-format question.timestamp 'LLL'}}</p>
+<p>{{question.info}}</p>
+<div class="row">
+  <div class="col-sm-3">
+    {{update-question question=question}}
+  </div>
+  <div class="col-sm-3">
+    <button {{action 'destroyQuestion' question class='btn btn-danger'}}>Delete Question</button>
+  </div>
+</div>
