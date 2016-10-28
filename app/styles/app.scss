@@ -19,6 +19,10 @@ h3 {
   text-align: center;
 }
 
+h2{
+  color: $winedregs;
+}
+
 .container{
   h1 {
     text-align: center;
@@ -136,7 +140,7 @@ h3 {
     margin-left: auto;
     display: block;
   }
-  .col-sm-3 .btn-danger{
+  .col-sm-2 .btn-danger{
     margin-top: 1rem;
   }
 }
