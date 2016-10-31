@@ -2,7 +2,7 @@
 
 module.exports = function(environment) {
   var ENV = {
-    modulePrefix: 'ember-qanda',
+    modulePrefix: 'ember-qna',
     environment: environment,
     rootURL: '/',
     locationType: 'auto',
