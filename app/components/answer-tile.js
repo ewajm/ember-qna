@@ -1,6 +1,14 @@
 import Ember from 'ember';
 
 export default Ember.Component.extend({
+  currentUser: Ember.inject.service(),
+  isAnswerer: Ember.computed('currentUser.curUser', 'answer.user.username', function(){
+    if(this.get('currentUser.curUser')){
+      return this.get('currentUser.curUser').get('username') === this.get('answer.user.username') || this.get('currentUser.curUser.permission') === 0;
+    } else {
+      return false;
+    }
+  }),
   isDownvoted: false,
   didRender(){
     this._super(...arguments);
