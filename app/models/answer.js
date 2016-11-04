@@ -6,5 +6,6 @@ export default DS.Model.extend({
   timestamp: DS.attr(),
   upvotes: DS.attr(),
   downvotes: DS.attr(),
-  question: DS.belongsTo('question', {async:true})
+  question: DS.belongsTo('question', {async:true}),
+  user: DS.belongsTo('user', {async:true})
 });
