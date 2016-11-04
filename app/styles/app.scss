@@ -30,6 +30,18 @@ a:hover {
   color: $winedregs;
 }
 
+.nav-tabs {
+  cursor: pointer;
+  font-weight: bold;
+  li.active > a {
+    color: $winedregs;
+  }
+}
+
+.nav-tabs > li.active > a:hover {
+  color: $winedregs;
+}
+
 .wider{
   width: 60%;
 }

@@ -2,8 +2,8 @@
   {{user-display user=model logOut='logOut' updateUser='updateUser'}}
   <div class="col-sm-10">
     <ul class="nav nav-tabs nav-justified">
-      <li role='presentation'>{{#link-to 'user.questions' model.id}}Questions{{/link-to}}</li>
-      <li role='presentation'>{{#link-to 'user.answers' model.id}}Answers{{/link-to}}</li>
+      {{#link-to 'user.questions' model.id tagName="li"}}<a {{bind-attr href="view.href"}}>Questions</a>{{/link-to}}
+      {{#link-to 'user.answers' model.id tagName="li"}}<a {{bind-attr href="view.href"}}>Answers</a>{{/link-to}}
       {{#if isAdmin}}
         <li role='presentation'><a href="#">Users</a></li>
       {{/if}}
