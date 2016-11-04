@@ -3,13 +3,21 @@
 <p class='byline'>{{question.author}} {{moment-format question.timestamp 'LLL'}}</p>
 <div class="row question-buttons">
   <div class="col-sm-4 col-xs-12">
-    {{new-answer question=question saveAnswer='saveAnswer'}}
+    {{#if currentUser.curUser}}
+      {{new-answer question=question saveAnswer='saveAnswer'}}
+    {{else}}
+      <p>Please log in to answer questions</p>
+    {{/if}}
   </div>
   <div class="col-sm-4 col-xs-6">
-    {{update-question question=question updateQuestion='updateQuestion'}}
+    {{#if isAsker}}
+      {{update-question question=question updateQuestion='updateQuestion'}}
+    {{/if}}
   </div>
   <div class="col-sm-4 col-xs-6">
-    <button class='btn btn-danger' {{action 'destroyQuestion' question }}>Delete Question</button>
+    {{#if isAsker}}
+      <button class='btn btn-danger' {{action 'destroyQuestion' question }}>Delete Question</button>
+    {{/if}}
   </div>
 </div>
 

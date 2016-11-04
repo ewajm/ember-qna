@@ -1,8 +1,14 @@
 import Ember from 'ember';
 
 export default Ember.Component.extend({
+  currentUser: Ember.inject.service(),
   sortBy: ['upvotes:desc'],
   sortedAnswers: Ember.computed.sort('question.answers', 'sortBy'),
+  isAsker: Ember.computed('currentUser.curUser', 'question.user.username', function(){
+    console.log(this.get('currentUser.curUser.username'));
+    console.log(this.get('question.user.username'));
+    return this.get('currentUser.curUser').get('username') === this.get('question.user.username') || this.get('currentUser.curUser.permission') === 0;
+  }),
   actions: {
     destroyQuestion(question){
       if (confirm('Are you sure you want to delete this question?')) {
