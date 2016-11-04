@@ -1,5 +1,5 @@
 {{#if currentUser.curUser}}
-  {{#link-to 'user' currentUser.curUser.id}}
+  {{#link-to 'user.questions' currentUser.curUser.id}}
     Hello, {{currentUser.curUser.username}}
   {{/link-to}}
 {{else}}

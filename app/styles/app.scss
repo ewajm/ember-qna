@@ -20,6 +20,16 @@ h2{
   color: $winedregs;
 }
 
+a {
+  color: indigo;
+}
+a:visited {
+  color: indigo;
+}
+a:hover {
+  color: $winedregs;
+}
+
 .wider{
   width: 60%;
 }
@@ -64,12 +74,6 @@ h2{
     text-align: right;
     font-size: medium;
   }
-  a {
-    color: indigo;
-  }
-  a:visited {
-    color: indigo;
-  }
   a:hover {
     div.row {
       -webkit-box-shadow: 0px 0px 6px 0px rgba(0,0,0,0.75);
@@ -77,7 +81,6 @@ h2{
       box-shadow: 0px 0px 6px 0px rgba(0,0,0,0.75);
       border-radius: 5px
     }
-    color: $winedregs;
   }
 }
 

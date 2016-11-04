@@ -2,7 +2,7 @@
 <p class='question-content'>{{question.info}}</p>
 <p class='byline'>
   {{#if question.user}}
-    {{#link-to 'user' question.user.id}}{{question.user.username}}{{/link-to}}
+    {{#link-to 'user.questions' question.user.id}}{{question.user.username}}{{/link-to}}
   {{else}}
     {{question.author}}
   {{/if}}

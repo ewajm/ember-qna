@@ -12,6 +12,7 @@ Router.map(function() {
   this.route('login');
   this.route('user', {path: '/user/:user_id'}, function() {
     this.route('questions');
+    this.route('answers');
   });
 });
 

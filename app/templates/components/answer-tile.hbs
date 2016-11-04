@@ -6,7 +6,7 @@
     <p>{{answer.content}}</p>
     <div class="row">
       <div class="col-sm-4 col-xs-6">
-        {{#link-to 'user' answer.user.id}}{{answer.user.username}}{{/link-to}}
+        {{#link-to 'user.answers' answer.user.id}}{{answer.user.username}}{{/link-to}}
       </div>
       <div class="col-sm-4 col-xs-6">
         {{moment-from-now answer.timestamp}}

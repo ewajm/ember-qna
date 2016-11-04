@@ -1,5 +1,5 @@
 <ul>
   {{#each model as |question|}}
-    <li>{{moment-format question.timestamp 'LLL'}} {{#link-to 'question' question.id}} {{question.content}}{{/link-to}}</li>
+    <li>{{moment-format question.timestamp 'LLL'}} {{#link-to 'question' question.id}} {{question.content}} - {{answer-amount question.answers.length}}{{/link-to}}</li>
   {{/each}}
 </ul>
