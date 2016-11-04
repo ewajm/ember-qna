@@ -1,9 +1,15 @@
 <div>
   <form {{action 'saveQuestion' on='submit'}}>
-    <div class="form-group">
-      <label for="author">Author:</label>
-      {{input value=author id="author" required='required' class="form-control"}}
-    </div>
+    {{#if currentUser.curUser}}
+      <div class="form-group">
+        <label for="author">Author: {{currentUser.curUser.username}}</label>
+      </div>
+    {{else}}
+      <div class="form-group">
+        <label for="author">Author:</label>
+        {{input value=author id="author" required='required' class="form-control"}}
+      </div>
+    {{/if}}
     <div class="form-group">
       <label for="content">Question:</label>
       {{input value=content id="content" required='required' class="form-control"}}

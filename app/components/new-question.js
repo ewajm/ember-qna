@@ -6,7 +6,7 @@ export default Ember.Component.extend({
   actions: {
     saveQuestion() {
       var params={
-        author: this.get('author'),
+        author: this.get('currentUser.curUser') ? this.get('currentUser.curUser.username'): this.get('author'),
         content: this.get('content'),
         info: this.get('info') ? this.get('info'): "",
         timestamp: moment().valueOf()
