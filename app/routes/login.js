@@ -1,9 +1,7 @@
 import Ember from 'ember';
 
 export default Ember.Route.extend({
-  model(){
-    return this.store.query('user', {orderBy: 'username', equalTo: 'admin'})
-  },
+  currentUser: Ember.inject.service(),
   actions: {
     submitSignup(params){
       var context = this;
@@ -31,10 +29,10 @@ export default Ember.Route.extend({
         curUser.forEach(function(user){
           if(user.get('password')===params.password){
             canLogin = true;
+            context.get('currentUser').login(user);
           }
         });
         if(canLogin){
-          //login here
           context.transitionTo('index');
         } else {
           alert('your username does not match your password, please try again');
