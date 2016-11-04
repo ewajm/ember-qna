@@ -30,8 +30,8 @@
 
 <h2>How people have answered: </h2>
 {{#if question.answers}}
-  {{#each sortedAnswers as |answer|}}
-    {{answer-tile answer=answer updateAnswer='updateAnswer' destroyAnswer='destroyAnswer' upVote='upVote' downVote='downVote'}}
+  {{#each sortedAnswers as |answer index|}}
+    {{answer-tile answer=answer index=index updateAnswer='updateAnswer' destroyAnswer='destroyAnswer' upVote='upVote' downVote='downVote'}}
   {{/each}}
 {{else}}
   <h3>No answers yet! Why not add one using the button above?</h3>

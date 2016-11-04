@@ -1,9 +1,12 @@
 <div class="row answer-row {{if isDownvoted "downvoted"}}">
-  <div class="col-sm-9">
+  <div class="col-sm-1">
+    {{{best-answer index}}}
+  </div>
+  <div class="col-sm-8">
     <p>{{answer.content}}</p>
     <div class="row">
       <div class="col-sm-4 col-xs-6">
-        {{answer.user.username}}
+        {{#link-to 'user' answer.user.id}}{{answer.user.username}}{{/link-to}}
       </div>
       <div class="col-sm-4 col-xs-6">
         {{moment-from-now answer.timestamp}}
