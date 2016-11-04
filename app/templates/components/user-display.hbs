@@ -1,18 +1,14 @@
-<div class="row">
-  <div class="col-sm-2">
-    {{{user-icon user.username}}}
-    <p>{{user.username}}</p>
-    <p>{{user.email}}</p>
-    {{#if isUser}}
-      {{update-user user=user updateUser='updateUser'}}
-      <button class='btn btn-danger center-block' {{action 'logOut'}}>Log out</button>
-    {{/if}}
-  </div>
-  <div class="col-sm-10">
-    <ul>
-      {{#each user.questions as |question|}}
-        <li>{{moment-format question.timestamp 'LLL'}} {{#link-to 'question' question.id}} {{question.content}}{{/link-to}}</li>
-      {{/each}}
-    </ul>
-  </div>
+<div class="col-sm-2 profile-col">
+  {{{user-icon user.username}}}
+  <p>
+    username: <br>
+    {{user.username}}</p>
+  <p>
+    email: <br>
+    {{user.email}}
+  </p>
+  {{#if isUser}}
+    {{update-user user=user updateUser='updateUser'}}
+    <button class='btn btn-danger center-block' {{action 'logOut'}}>Log out</button>
+  {{/if}}
 </div>

@@ -5,6 +5,9 @@ export default Ember.Component.extend({
   isUser: Ember.computed('user.username', 'currentUser.curUser.username', function(){
     return this.get('user.username') === this.get('currentUser.curUser.username');
   }),
+  isAdmin: Ember.computed('currentUser.curUser.permission', function(){
+    return this.get('currentUser.curUser.permission') ==='0';
+  })
   actions: {
     logOut(){
       this.get('currentUser').logout();

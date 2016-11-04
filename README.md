@@ -1,6 +1,11 @@
 # Ember-Q & A Site
 
-A question and answer message board made with Ember
+A question and answer message board made with Ember, now with a user system. An account is required to write answers but not to ask questions.
+
+### Dummy account for testing functionality
+
+* username: me
+* password: password
 
 ## Prerequisites
 

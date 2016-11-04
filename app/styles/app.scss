@@ -7,15 +7,6 @@ $pewterblue: #8b9eb7;
 $darklavender: #745296;
 $winedregs: #632a50;
 
-.wider{
-  width: 60%;
-}
-
-.best {
-  font-size: xx-large;
-  color: $bitterlemon;
-  text-shadow: 2px 1px 5px rgba(40, 40, 40, 1);
-}
 
 body {
   background-color: $winedregs;
@@ -27,6 +18,16 @@ h3 {
 
 h2{
   color: $winedregs;
+}
+
+.wider{
+  width: 60%;
+}
+
+.best {
+  font-size: xx-large;
+  color: $bitterlemon;
+  text-shadow: 2px 1px 5px rgba(40, 40, 40, 1);
 }
 
 .container{
@@ -157,6 +158,20 @@ h2{
 
 .downvoted{
   opacity: .5;
+}
+
+.profile-col {
+  font-weight: bold;
+  font-size: medium;
+  .btn-warning, img {
+    margin-bottom: 1rem;
+  }
+  img {
+    border-radius: 50px;
+    -webkit-box-shadow: -2px -2px 5px 0px rgba(0,0,0,0.75);
+    -moz-box-shadow: -2px -2px 5px 0px rgba(0,0,0,0.75);
+    box-shadow: -2px -2px 5px 0px rgba(0,0,0,0.75);
+  }
 }
 
 @media screen and (max-width: 750px){

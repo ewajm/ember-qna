@@ -1,1 +1,13 @@
-{{user-display user=model logOut='logOut' updateUser='updateUser'}}
+<div class="row">
+  {{user-display user=model logOut='logOut' updateUser='updateUser'}}
+  <div class="col-sm-10">
+    <ul class="nav nav-tabs nav-justified">
+      <li role='presentation'>{{#link-to 'user.questions' model.id}}Questions{{/link-to}}</li>
+      <li role='presentation'><a href="#">Answers</a></li>
+      {{#if isAdmin}}
+        <li role='presentation'><a href="#">Users</a></li>
+      {{/if}}
+    </ul>
+    {{outlet}}
+  </div>
+</div>
