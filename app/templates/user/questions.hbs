@@ -1,4 +1,4 @@
-<ul>
+<ul class='user-display'>
   {{#each model as |question|}}
     <li>{{moment-format question.timestamp 'LLL'}} {{#link-to 'question' question.id}} {{question.content}} - {{answer-amount question.answers.length}}{{/link-to}}</li>
   {{/each}}
