@@ -5,7 +5,7 @@ export default Ember.Route.extend({
   actions: {
     submitSignup(params){
       var context = this;
-      var nameAvailable = this.store.query('user', {orderBy: 'username', equalTo: params.username}).then(function(nameAvailable){
+      this.store.query('user', {orderBy: 'username', equalTo: params.username}).then(function(nameAvailable){
         var duplicate = false;
         nameAvailable.forEach(function(user){
           if(user.get('username')===params.username){
@@ -18,13 +18,14 @@ export default Ember.Route.extend({
         } else {
           var newUser = context.store.createRecord('user', params);
           newUser.save();
+          context.get('currentUser').login(newUser);
           context.transitionTo('index');
         }
       });
     },
     submitLogin(params){
       var context = this;
-      var curUser = this.store.query('user', {orderBy: 'username', equalTo: params.username}).then(function(curUser){
+      this.store.query('user', {orderBy: 'username', equalTo: params.username}).then(function(curUser){
         var canLogin = false;
         curUser.forEach(function(user){
           if(user.get('password')===params.password){

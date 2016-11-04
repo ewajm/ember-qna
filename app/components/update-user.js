@@ -14,7 +14,7 @@ export default Ember.Component.extend({
       this.set('email', "");
       this.set('password', "");
       this.set('isShowingModal', false);
-      this.sendAction('updateUser', user, params)
+      this.sendAction('updateUser', user, params);
     }
   }
 });

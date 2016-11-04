@@ -11,7 +11,7 @@ export default Ember.Component.extend({
       this.sendAction('logOut');
     },
     updateUser(user, params){
-      this.sendAction('updateUser', user, params)
+      this.sendAction('updateUser', user, params);
     }
   }
 });
