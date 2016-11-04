@@ -1,0 +1,12 @@
+<div class="col-sm-2">
+  {{{user-icon user.username}}}
+  <p>{{user.username}}</p>
+  <p>{{user.email}}</p>
+  {{#if isUser}}
+    <button class='btn btn-warning center-block'>Edit Profile</button>
+    <button class='btn btn-warning center-block' {{action 'logOut'}}>Log out</button>
+  {{/if}}
+</div>
+<div class="col-sm-10">
+
+</div>
