@@ -5,13 +5,14 @@ export default Ember.Component.extend({
   currentUser: Ember.inject.service(),
   isShowingModal: false,
   actions: {
-    saveAnswer(question){
+    saveAnswer(question, user){
       var params={
         content: this.get('content'),
         timestamp: moment().valueOf(),
         upvotes: 0,
         downvotes: 0,
-        question: question
+        question: question,
+        user: user
       };
       this.set('isShowingModal', false);
       this.set('content', "");
