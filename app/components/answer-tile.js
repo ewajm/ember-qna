@@ -19,7 +19,7 @@ export default Ember.Component.extend({
       }
     },
     upVote(answer) {
-      if(answer.get('upvotes') + 1 > answer.get('downvotes')){
+      if(answer.get('upvotes') + 1 >= answer.get('downvotes')){
         this.set('isDownvoted', false);
       }
       this.sendAction('upVote', answer);

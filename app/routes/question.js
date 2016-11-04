@@ -40,12 +40,12 @@ export default Ember.Route.extend({
       });
       answer.save();
       var question=this.get('model');
-      this.transitionTo('question', question.id);
+      this.transitionTo('question', question.get('id'));
     },
     destroyAnswer(answer){
       answer.destroyRecord();
       var question=this.get('model');
-      this.transitionTo('question', question.id);
+      this.transitionTo('question', question.get('id'));
     },
     upVote(answer) {
       answer.set('upvotes', answer.get('upvotes')+1);
