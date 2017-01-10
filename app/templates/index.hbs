@@ -1,0 +1,10 @@
+<h1>Browse Questions</h1>
+<div class="questions">
+  {{#if model}}
+    {{#each model as |question|}}
+      {{question-tile question=question}}
+    {{/each}}
+  {{else}}
+    <h2>No questions yet! Why not {{#link-to 'ask'}}ask one?{{/link-to}}</h2>
+  {{/if}}
+</div>

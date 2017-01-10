@@ -1,0 +1,23 @@
+
+<header class= "jumbotron">
+  <div class="row">
+    <div class="col-xs-4">
+      {{#link-to 'index'}}
+        Home
+      {{/link-to}}
+    </div>
+    <div class="col-xs-4">
+      {{#link-to 'ask'}}
+        Ask Something!
+      {{/link-to}}
+    </div>
+    <div class="col-xs-4">
+      {{login-display}}
+    </div>
+  </div>
+  <hr>
+  <h1>QuEmber</h1>
+</header>
+<div class= "container">
+    {{outlet}}
+</div>

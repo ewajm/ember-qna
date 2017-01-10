@@ -1,0 +1,38 @@
+<h2>{{question.content}}</h2>
+<p class='question-content'>{{question.info}}</p>
+<p class='byline'>
+  {{#if question.user}}
+    {{#link-to 'user.questions' question.user.id}}{{question.user.username}}{{/link-to}}
+  {{else}}
+    {{question.author}}
+  {{/if}}
+  {{moment-format question.timestamp 'LLL'}}
+</p>
+<div class="row question-buttons">
+  <div class="col-sm-4 col-xs-12">
+    {{#if currentUser.curUser}}
+      {{new-answer question=question saveAnswer='saveAnswer'}}
+    {{else}}
+      <p>Please log in to answer questions</p>
+    {{/if}}
+  </div>
+  <div class="col-sm-4 col-xs-6">
+    {{#if isAsker}}
+      {{update-question question=question updateQuestion='updateQuestion'}}
+    {{/if}}
+  </div>
+  <div class="col-sm-4 col-xs-6">
+    {{#if isAsker}}
+      <button class='btn btn-danger' {{action 'destroyQuestion' question }}>Delete Question</button>
+    {{/if}}
+  </div>
+</div>
+
+<h2>How people have answered: </h2>
+{{#if question.answers}}
+  {{#each sortedAnswers as |answer index|}}
+    {{answer-tile answer=answer index=index updateAnswer='updateAnswer' destroyAnswer='destroyAnswer' upVote='upVote' downVote='downVote'}}
+  {{/each}}
+{{else}}
+  <h3>No answers yet! Why not add one using the button above?</h3>
+{{/if}}

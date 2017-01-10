@@ -1,0 +1,28 @@
+<div class="row answer-row {{if isDownvoted "downvoted"}}">
+  <div class="col-sm-1">
+    {{{best-answer index}}}
+  </div>
+  <div class="col-sm-8">
+    <p>{{answer.content}}</p>
+    <div class="row">
+      <div class="col-sm-4 col-xs-6">
+        {{#link-to 'user.answers' answer.user.id}}{{answer.user.username}}{{/link-to}}
+      </div>
+      <div class="col-sm-4 col-xs-6">
+        {{moment-from-now answer.timestamp}}
+      </div>
+      <div class="col-sm-2 col-xs-6">
+        <span class='make-clickable' {{action 'upVote' answer}}>{{answer.upvotes}} {{fa-icon 'thumbs-up' }}</span>
+      </div>
+      <div class="col-sm-2 col-xs-6">
+        <span class='make-clickable' {{action 'downVote' answer}}>{{answer.downvotes}} {{fa-icon 'thumbs-down' }}</span>
+      </div>
+    </div>
+  </div>
+  <div class="col-sm-3">
+    {{#if isAnswerer}}
+      {{update-answer answer=answer updateAnswer='updateAnswer'}}
+      <button class="btn btn-danger" {{action 'destroyAnswer' answer}}>Delete Answer</button>
+    {{/if}}
+  </div>
+</div>

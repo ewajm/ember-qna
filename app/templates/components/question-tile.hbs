@@ -1,0 +1,16 @@
+{{#link-to 'question' question.id}}
+  <div class="row">
+    <div  class="col-sm-6 col-xs-12">
+    <p>{{question.content}}</p>
+    </div>
+    <div class="col-sm-3 col-xs-4">
+      {{moment-from-now question.timestamp}}
+    </div>
+    <div class="col-sm-1 col-xs-4">
+      {{question.author}}
+    </div>
+    <div class="col-sm-2 col-xs-4">
+      {{{answer-amount question.answers.length}}}
+    </div>
+  </div>
+{{/link-to}}

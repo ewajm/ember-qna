@@ -1,0 +1,16 @@
+<button class='btn btn-warning' {{action 'toggleModal'}}>Edit Answer</button>
+
+{{#if isShowingModal}}
+  {{#modal-dialog close='toggleModal'
+    targetAttachment="center"
+    translucentOverlay=true
+    container-class="wider"}}
+    <form>
+      <div class="form-group">
+        <label for="content">Question:</label>
+        {{input value=content id="content" class="form-control" placeholder=answer.content}}
+      </div>
+      <button class="btn btn-success" {{action 'updateAnswer' answer}}>Save Edits</button>
+    </form>
+    {{/modal-dialog}}
+{{/if}}

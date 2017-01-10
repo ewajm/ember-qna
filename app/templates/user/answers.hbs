@@ -1,0 +1,5 @@
+<ul class='user-display'>
+  {{#each model as |answer|}}
+    <li>{{moment-format answer.timestamp 'LLL'}} {{#link-to 'question' answer.question.id}} {{answer.content}} - {{answer.upvotes}} {{fa-icon 'thumbs-up' }} {{answer.downvotes}} {{fa-icon 'thumbs-down' }}{{/link-to}}</li>
+  {{/each}}
+</ul>
